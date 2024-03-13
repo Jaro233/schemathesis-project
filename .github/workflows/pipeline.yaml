@@ -14,7 +14,7 @@ jobs:
     - uses: actions/checkout@v2
       name: Check out repository code
 
-    - name: Set up Python 3.8
+    - name: Set up Python 3.9
       uses: actions/setup-python@v2
       with:
         python-version: 3.9
@@ -25,7 +25,7 @@ jobs:
         pip install pytest pytest-html requests schemathesis
 
     - name: Run pytest and generate HTML report
-      run: pytest --html=report.html
+      run: pytest st_demo.py --html=report.html
 
     - name: Upload HTML report as an artifact
       uses: actions/upload-artifact@v2
